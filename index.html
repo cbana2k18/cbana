@@ -1,86 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>CBANA Khawmpi 2018</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CBANA Khawmpi in lungawi so par ten kan lo hmuak</title>
+		<link href="css/jquery.bxslider.css" rel="stylesheet" />
+		<link href="style.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet"/>
+		<link href="shourtcut icon" href="favicon.ico">
+		<meta name="description" content="">
 </head>
 
 <body>
+    <a name="home">
+        <!--- Start Navigation -->
+                        <script src="js/jquery-1.11.2.min.js"></script>
+                        <script src="js/main.js"></script> <!--- For Navigation -->
+                        <div class="nav-outer">
+                        <div class="nav-wrap">
+                            <nav class="navigation">
+                                
+                                <div class='nav' nav-menu-style="yoga">
+                                    <ul class="nav-menu">
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#register">Register</a></li>
+                                        <li><a href="#pastor">Pastor thucah</a></li>
+                                        <li><a href="#events">Events</a></li> 
+                                        <li><a href="#khawmpi">Khawmpi program</a></li>
+                                    </ul>	
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="nav-clear"></div>
+<!--- End Navigation -->
+<div class="clearfix"></div>
+                <div class="clearfix"></div>
+                <h2 class="w3-center">CBANA Khawmpi in lungawi so par ten kan lo hmuak</h2>
 
-    <body>
-        <center>
-        <div id="navbar">
-        <a href="" id="linkref">Home</a>
-        <a href="" id="linkref">Login</a>
-        <a href="" id="linkref">Zuamawknak</a>
-        <a href="" id="linkref">Silver Jubilee</a>
-        </div>
-        </div>
-        </center>
-    </body>
+                <div class="my slides" style="max-width: width 100%;">
+                  <img class="mySlides" src="mission.jpg" style="width:100%">
+                  <img class="mySlides" src="cbana-ce.jpg" style="width:100%">
+                  <img class="mySlides" src="ieg.jpg" style="width: 100%">
+                </div>
+                
+                <script>
+                var myIndex = 0;
+                carousel();
+                
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";  
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1}    
+                    x[myIndex-1].style.display = "block";  
+                    setTimeout(carousel, 3000); // Change image every 2 seconds
+                }
+                </script>
+<a name="register">
+<div class="container">
+                        <h1 class="brand"><span>Hitawk ah</span> Register tuah aw</h1>
+                        <div class="wrapper animated bounceInLeft">
+                          <div class="company-info">
+                            <h3>Khawmpi tuahnak ahmun le register tuahnak</h3>
+                            <ul>
+                              <li><i class="fa fa-road"></i> 6400 Sugarloaf Parkway Duluth, Georgia 30097</li>
+                              <li><i class="fa fa-phone"></i> (770)813-7500</li>
+                              <li><i class="fa fa-envelope"></i> info@acbcga.org</li>
+                            </ul>
+                          </div>
+                          <div class="contact">
+                            <h3>Email Us</h3>
+                            <form>
+                              <p>
+                                <label>Name</label>
+                                <input type="text" name="name">
+                              </p>
+                              <p>
+                                <label>Church Name</label>
+                                <input type="text" name="church">
+                              </p>
+                              <p>
+                                <label>Email Address</label>
+                                <input type="email" name="email">
+                              </p>
+                              <p>
+                                <label>Phone Number</label>
+                                <input type="text" name="phone">
+                              </p>
+                              <p class="full">
+                                <label>Message</label>
+                                <textarea name="message" rows="5"></textarea>
+                              </p>
+                              <p class="full">
+                                <button>Submit</button>
+                              </p>
+                            </form>
+                            
+                      <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+                      <script src="main.js"></script>
+                          </div>
+                        </div>
+                      </div>
+                    </body>
+
+<a name="events">
+                <div id="banner-wrapper">
+                    <h1>Khawmpi program le buletin</h1>
+                        <div class="welcome-column">
+                            <div class="welcome-icon">
+                                <i class="fa fa-keyboard-o"></i>
+                            </div>
+                            <div class="welcome-text">
+                                <h3>Friday night service</h3>
+                                <p>Tlawngkai ni 5 zan, friday night hi cbana khawmpi on caan a si ih himi ah zumawknak tla a um ding.
+                                    ACBC in khual hmuahnak hla thawn in hmuak ding ih Secretary hnen ihsin thucah ngai nak tla kan nei ding. </p>
+                            </div>
+                        </div>
+                        <div class="welcome-column">
+                            <div class="welcome-icon">
+                                <i class="fa fa-laptop"></i>
+                            </div>
+                            <div class="welcome-text">
+                                <h3>CBANA thuanthu relnak</h3>
+                                <p>Pathian lam hruainak in CBANA tla kum 10 a rung kim leh ta. Hitin kan feh vivo thei mi hi Pathian lam hruainak le 
+                                    kai hruainak ruang ah a si. Kum 10 kimnak dar pi tla kan tum lai ding. </p>
+                            </div>
+                        </div>
+                </div>
+  <!--- End Four Column Icon Section -->
+	<div class="clearfix"></div>
+    <!--- Start Parallax Section -->
+    <section class="parallax-1">
+        <div class="parallax-inner">
+<!--- Start Heading & Text Section -->
+<section class="one-third">
+        <td><i class="fa fa-youtube-play"></i></td>
+        <h3>cBANA president hnen ih thucah.</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+            the industry's standard dummy text ever since the 1500s.</p>
+    </section>
+    <section class="one-third">
+        <td><i class="fa fa-html5"></i></td>
+        <h3>CBANA General Secretary hnen ih thucah</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+            the industry's standard dummy text ever since the 1500s.</p>		</section>
+    <section class="one-third">
+        <td><i class="fa fa-desktop"></i></td>
+        <h3>Mission Diretor hnen ih thucah</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+            the industry's standard dummy text ever since the 1500s.</p>		</section>
+<!--- End Heading & Text Section -->
 </div>
-    <header class="v-header container opacity"> 
-        <div class="header-opacity"></div>
-        <div class="header-content">
-            <h1>CBANA Khawmpi in kan lo hmuak</h1>
-            <p>A vei 6 nak CBANA khawmpi in lungawi so par ten kan lo hmuak. Himi website ah CBANA thawn pehpar
-                in a tul mi pawl na hawl thei ding tin zumnak kan nei. Khawmpi sung hmuah hmuah ah himi website hi 
-                kan update vivo ding.
-            </p>
-            <a href="https://www.google.com/maps/place/Infinite+Energy+Center/@33.991627,-84.0961189,17z/data=!3m2!4b1!5s0x88f5bd49b0037b69:0xd5c0b26dc15b8110!4m5!3m4!1s0x88f5bd49bac0e1b3:0xb818643559bf3468!8m2!3d33.9916226!4d-84.0939249" class="#btn">Khawmpi tuahnak address</a>
+</section>
+<!--- End Parallax Section -->
+<div id="banner-wrapper">
+        <div class="clearfix"></div>
+<!--- Start Heading & Text Sections -->
+<a name="pastor">
+        <!--- Start Image Section -->
+			<section class="left-col">
+                    <img src="https://imgur.com/gRnF2Kk"><img src="https://i.imgur.com/gRnF2Kk.jpg" 
+                        title="source: imgur.com" /></a>"    
+                </section>
+    <!--- End Image Section -->
+    <!--- Start Heading & Text -->
+                <section class="sidebar">
+                    <h3>Heading Title Text</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </section>
+    <!--- End Heading & Text -->
+        
+            <div class="clearfix"></div>
+    <!--- Start Heading & Text Section -->
         </div>
-    </header>
-    <body>
-            <div class="container">
-              <h1 class="brand"><span>CBANA</span> Khawmpi</h1>
-              <div class="wrapper animated bounceInLeft">
-                <div class="company-info">
-                  <h3>Khawmpi tuahnak hmun le register tuahnak</h3>
-                  <ul>
-                    <li><i class="fa fa-road"></i> 6400 Sugarloaf Parkway Duluth, Georgia 30097</li>
-                    <li><i class="fa fa-phone"></i> (770)813-7500</li>
-                    <li><i class="fa fa-envelope"></i> info@acbcga.org</li>
-                  </ul>
-                </div>
-                <div class="contact">
-                  <h3>Email Us</h3>
-                  <form>
-                    <p>
-                      <label>Name</label>
-                      <input type="text" name="name">
-                    </p>
-                    <p>
-                      <label>Church Name</label>
-                      <input type="text" name="church">
-                    </p>
-                    <p>
-                      <label>Email Address</label>
-                      <input type="email" name="email">
-                    </p>
-                    <p>
-                      <label>Phone Number</label>
-                      <input type="text" name="phone">
-                    </p>
-                    <p class="full">
-                      <label>Message</label>
-                      <textarea name="message" rows="5"></textarea>
-                    </p>
-                    <p class="full">
-                      <button>Submit</button>
-                    </p>
-                  </form>
-                  
-            <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-            <script src="main.js"></script>
-                </div>
-              </div>
-            </div>
-          </body>
+<div class="clearfix"></div>
 
+</div>
+</section>
+<div class="clearfix"></div>
+<!--- Start Parallax Section -->
+<section class="parallax-2">
+    <div class="parallax-inner">
+<!--- Start Heading & Text Section -->
+<section class="one-third">
+    <td><i class="fa fa-youtube-play"></i></td>
+    <h3>Khmawpi sung ih tuah ding mi pawl.</h3>
+    <p>Khawmpi sung ah hruaitu pawl, security pawl in tuanvo nei tu pawl ih lam hruainak le thusimnak pawl ngai aw. 
+        a bik in inntek pawl ih lo sim mi pawl hi tha ten ngai aw la thlun aw.
+    </p>
+</section>
+<section class="one-third">
+    <td><i class="fa fa-html5"></i></td>
+    <h3>Khawmpi sung ih tuah lo ding mi pawl.</h3>
+    <p>Khawmpi sung ah zu in lo ding, khaini hmom lo ding, kuak fawp lo ding ih sadah tivek tla hmang lo ding
+            in zangfah kan lo </p>		</section>
+<section class="one-third">
+    <td><i class="fa fa-desktop"></i></td>
+    <h3>Theih tul mi te te.</h3>
+    <p>Motor parking pawl hi kan lo sim mi pawl ah nan park lo len ticket nan ngah ding. Cu ruangah seurity pawl le parking coordinator pawl ih
+        thu ngai aw. Nauhak pawl kha nauhak kilnak ah va ret aw.
+    </p>		</section>
+<!--- End Heading & Text Section -->
+</div>
+</section>
+<!--- End Parallax Section -->
+<a name="khawmpi">
     <section class="section section-a">
         <div class="container">
             <h2>Zuamawknak</h2>
@@ -95,7 +225,6 @@
         </div>
 
     </section>
-
     <section class="section section-b">
             <div class="container">
                 <h2>Silver Jubilee</h2>
@@ -140,5 +269,13 @@
             
         </section>
 
+    <!--- End Banner Wrapper -->	
+    <!--- Start Footer -->
+            <footer>
+                <p>&copy; CBANA Khawmpi, 2018. All rights reserved</p>
+            </footer>
+    <!--- End Footer -->
+        </body>
+    </html>
 </body>
 </html>
