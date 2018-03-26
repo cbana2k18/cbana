@@ -41,6 +41,40 @@
                     </div>
                     <div class="nav-clear"></div>
 <!--- End Navigation -->
+	    <!--- Start Slider -->
+<script src="js/jquery.bxslider.min.js"></script><!--For Image Slider-->
+<div class="slide-wrap">
+    <section class="slider">
+        <ul class="slider1">
+            <a href="https://imgur.com/diPNdWt"><img src="https://i.imgur.com/diPNdWt.png" title="" /></a>
+        </ul>
+    </section>
+</div>
+<script type="text/javascript">
+    $('.slider1').bxSlider({
+        mode: 'fade',
+        captions: false,
+        auto:true,
+        pager:false,
+        
+    });
+    $('.slider2').bxSlider({
+        pager:false,
+        captions: true,
+        maxSlides: 3,
+        minSlides: 1,
+        slideWidth: 230,
+        slideMargin: 10
+    });
+    $('.slider3').bxSlider({
+        mode: 'fade',
+        captions: false,
+        auto:true,
+        pager:false,
+        controls:false,
+    });
+</script>
+<!--- End Slider -->
 <!--- Sart Banner Wrapper -->
 <a name="about">
 	<div id="banner-wrapper">
