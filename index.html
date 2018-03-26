@@ -1,3 +1,56 @@
+<?php 
+error_reporting(E_ALL ^ E_NOTICE); // hide all basic notices from PHP
+
+//If the form is submitted
+if(isset($_POST['submitted'])) {
+	
+	// require a name from user
+	if(trim($_POST['contactName']) === '') {
+		$nameError =  'Forgot your name!'; 
+		$hasError = true;
+	} else {
+		$name = trim($_POST['contactName']);
+	}
+	
+	// need valid email
+	if(trim($_POST['email']) === '')  {
+		$emailError = 'Forgot your e-mail address.';
+		$hasError = true;
+	} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
+		$emailError = 'Invalid email address!';
+		$hasError = true;
+	} else {
+		$email = trim($_POST['email']);
+	}
+		
+	// we need at least some content
+	if(trim($_POST['comments']) === '') {
+		$commentError = 'You your message!';
+		$hasError = true;
+	} else {
+		if(function_exists('stripslashes')) {
+			$comments = stripslashes(trim($_POST['comments']));
+		} else {
+			$comments = trim($_POST['comments']);
+		}
+	}
+		
+	// upon no failure errors let's email now!
+	if(!isset($hasError)) {
+		
+		$emailTo = 'atlantachinbaptistchurch@gmail.com'; // ADD YOUR EMAIL ADDRESS HERE FOR CONTACT FORM!
+		$subject = 'Submitted message from '.$name; // ADD YOUR EMAIL SUBJECT LINE HERE FOR CONTACT FORM!
+		$sendCopy = trim($_POST['sendCopy']);
+		$body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+		$headers = 'From: ' .' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+
+		mail($emailTo, $subject, $body, $headers);
+        
+        // set our boolean completion value to TRUE
+		$emailSent = true;
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +64,12 @@
 		<link href="shourtcut icon" href="favicon.ico">
 		<meta name="description" content="">
 </head>
-
+<style>
+    #map {
+        height: 300px;
+        width: 100%;
+    }
+</style>
 <body>
     <a name="home">
         <!--- Start Navigation -->
@@ -24,8 +82,9 @@
                                 <div class='nav' nav-menu-style="yoga">
                                     <ul class="nav-menu">
                                         <li><a href="#home">Home</a></li>
-                                        <li><a href="#register">Register</a></li>
+                                        <li><a href="#map">Map</a></li>
                                         <li><a href="#pastor">Pastor thucah</a></li>
+                                        <li><a href="#bulletin">Bulletin</a></li>
                                         <li><a href="#events">Events</a></li> 
                                         <li><a href="#khawmpi">Khawmpi program</a></li>
                                     </ul>	
@@ -35,78 +94,71 @@
                     </div>
                     <div class="nav-clear"></div>
 <!--- End Navigation -->
-<div class="clearfix"></div>
-                <div class="clearfix"></div>
-                <h2 class="w3-center">CBANA Khawmpi in lungawi so par ten kan lo hmuak</h2>
+<!--- Sart Banner Wrapper -->
+<a name="about">
+	<div id="banner-wrapper">
+		<h1>Welcome To CBANA 2018</h1>
+			<div class="welcome-column">
+				<div class="welcome-icon">
+					<i class="fa fa-keyboard-o"></i>
+				</div>
+				<div class="welcome-text">
+					<h3>Lungawi so par tene kan lo hmuak</h3>
+					<p>A vei 6 nak CBANA khawmpi in lungawi so par ten kan lo hmuak a si. Pathian lam hruainak in a vei 6 nak khawmpi tla kna hmang thei sal. Pathian a tha.
+					Atlanta Chin Baptist Church ih rak thawk mi CBANA cu tukum ah kum 10 a kim thei sal.
+					</p>
+				</div>
+			</div>
+			<div class="welcome-column">
+				<div class="welcome-icon">
+					<i class="fa fa-laptop"></i>
+				</div>
+				<div class="welcome-text">
+					<h3>Lungawithu simnak</h3>
+					<p>Rev. Sa Tin Lal hnen in lungawi thu sim nawk <br>
+					CBANA khawmpi ah ra khawmtu nan zaten par ah Pathian in thlawsuah tampi lo pe hram seh. Rin lo pi kum 10 a rung kim mei.
+					</p> <br>
+				</div>
+			</div>
+	</div>
+<!--- End Banner Wrapper -->
+<a name="map">
 
-                <div class="my slides" style="max-width: width 100%;">
-                  <img class="mySlides" src="mission.jpg" style="width:100%">
-                  <img class="mySlides" src="cbana-ce.jpg" style="width:100%">
-                  <img class="mySlides" src="ieg.jpg" style="width: 100%">
-                </div>
-                
-                <script>
-                var myIndex = 0;
-                carousel();
-                
-                function carousel() {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    for (i = 0; i < x.length; i++) {
-                       x[i].style.display = "none";  
-                    }
-                    myIndex++;
-                    if (myIndex > x.length) {myIndex = 1}    
-                    x[myIndex-1].style.display = "block";  
-                    setTimeout(carousel, 3000); // Change image every 2 seconds
-                }
-                </script>
-<a name="register">
-<div class="container">
-                        <h1 class="brand"><span>Hitawk ah</span> Register tuah aw</h1>
-                        <div class="wrapper animated bounceInLeft">
-                          <div class="company-info">
-                            <h3>Khawmpi tuahnak ahmun le register tuahnak</h3>
-                            <ul>
-                              <li><i class="fa fa-road"></i> 6400 Sugarloaf Parkway Duluth, Georgia 30097</li>
-                              <li><i class="fa fa-phone"></i> (770)813-7500</li>
-                              <li><i class="fa fa-envelope"></i> info@acbcga.org</li>
-                            </ul>
-                          </div>
-                          <div class="contact">
-                            <h3>Email Us</h3>
-                            <form>
-                              <p>
-                                <label>Name</label>
-                                <input type="text" name="name">
-                              </p>
-                              <p>
-                                <label>Church Name</label>
-                                <input type="text" name="church">
-                              </p>
-                              <p>
-                                <label>Email Address</label>
-                                <input type="email" name="email">
-                              </p>
-                              <p>
-                                <label>Phone Number</label>
-                                <input type="text" name="phone">
-                              </p>
-                              <p class="full">
-                                <label>Message</label>
-                                <textarea name="message" rows="5"></textarea>
-                              </p>
-                              <p class="full">
-                                <button>Submit</button>
-                              </p>
-                            </form>
-                            
-                      <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-                      <script src="main.js"></script>
-                          </div>
-                        </div>
-                      </div>
-                    </body>
+<div id="map"></div>
+
+<script>
+    function initMap() {
+        var location = {lat: 33.991358, lng: -84.093860};
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location, 
+            map: map
+        });
+    }
+    
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUqfItJg6AiRdznJAAbI0if5dGYgGORxU&callback=initMap"></script>
+    <type="text/javascript"></script>
+<!--- Start Image, Title & Text -->
+<section class="one-third">
+    <img src="img/500x371.png" title=""/>
+    <h3>Heading title text</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+</section>
+<section class="one-third">
+    <img src="img/500x371.png" title=""/>
+    <h3>heading title text</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+</section>
+<section class="one-third">
+    <img src="img/500x371.png" title=""/>
+    <h3>Heading title text</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+</section>
+<!--- End Image, Title & Text -->
 
 <a name="events">
                 <div id="banner-wrapper">
@@ -129,7 +181,7 @@
                                 <h3>CBANA thuanthu relnak</h3>
                                 <p>Pathian lam hruainak in CBANA tla kum 10 a rung kim leh ta. Hitin kan feh vivo thei mi hi Pathian lam hruainak le 
                                     kai hruainak ruang ah a si. Kum 10 kimnak dar pi tla kan tum lai ding. </p>
-                            </div>
+                            </div> <br>
                         </div>
                 </div>
   <!--- End Four Column Icon Section -->
@@ -270,12 +322,101 @@
         </section>
 
     <!--- End Banner Wrapper -->	
+    <!-- Start Contact Form -->
+	<section class="contact">
+            <div id="contact-area">
+            <div id="contact" class="section">
+                <div class="container content">
+                    <?php if(isset($emailSent) && $emailSent == true) { ?>
+                        <p class="info">Your email was sent. Huzzah!</p>
+                    <?php } else { ?>		
+                        </div>	
+                        <div id="contact-form">
+                            <?php if(isset($hasError) || isset($captchaError) ) { ?>
+                                <p class="alert">Error submitting the form</p>
+                            <?php } ?>
+                        
+                            <form id="contact-us" action="index.php" method="post">
+                                <div class="formblock">
+                                    <label class="screen-reader-text">Name</label>
+                                    <input type="text" name="contactName" id="contactName" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" class="txt requiredField" placeholder="Name:" />
+                                    <?php if($nameError != '') { ?>
+                                        <br /><span class="error"><?php echo $nameError;?></span> 
+                                    <?php } ?>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="formblock">
+                                    <label class="screen-reader-text">Email</label>
+                                    <input type="text" name="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="txt requiredField email" placeholder="Email:" />
+                                    <?php if($emailError != '') { ?>
+                                        <br /><span class="error"><?php echo $emailError;?></span>
+                                    <?php } ?>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="formblock">
+                                    <label class="screen-reader-text">Message</label>
+                                     <textarea name="comments" id="commentsText" class="txtarea requiredField" placeholder="Message:"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
+                                    <?php if($commentError != '') { ?>
+                                        <br /><span class="error"><?php echo $commentError;?></span> 
+                                    <?php } ?>
+                                </div>
+                              <div class="clearfix"></div>  
+                                    <button name="submit" type="submit" class="subbutton">SUBMIT</button>
+                                    <input type="hidden" name="submitted" id="submitted" value="true" />
+                            </form>			
+                    <?php } ?>
+                </div>
+            </div>
+        <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            $(document).ready(function() {
+                $('form#contact-us').submit(function() {
+                    $('form#contact-us .error').remove();
+                    var hasError = false;
+                    $('.requiredField').each(function() {
+                        if($.trim($(this).val()) == '') {
+                            var labelText = $(this).prev('label').text();
+                            $(this).parent().append('<span class="error">Forgot your '+labelText+'!</span>');
+                            $(this).addClass('inputError');
+                            hasError = true;
+                        } else if($(this).hasClass('email')) {
+                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                            if(!emailReg.test($.trim($(this).val()))) {
+                                var labelText = $(this).prev('label').text();
+                                $(this).parent().append('<span class="error">Sorry! Invalid '+labelText+'!</span>');
+                                $(this).addClass('inputError');
+                                hasError = true;
+                            }
+                        }
+                    });
+                    if(!hasError) {
+                        var formInput = $(this).serialize();
+                        $.post($(this).attr('action'),formInput, function(data){
+                            $('form#contact-us').slideUp("fast", function() {				   
+                                $(this).before('<p class="tick"><h3>Thanks! Your email has been delivered!</h3></p>');
+                            });
+                        });
+                    }
+                    
+                    return false;	
+                });
+            });
+            //-->!]]>
+        </script>
+                    </div>
+                </section>
+        <!-- End Contact Form -->
+                </div>
+        <!--- End Banner Wrapper -->			
     <!--- Start Footer -->
             <footer>
                 <p>&copy; CBANA Khawmpi, 2018. All rights reserved</p>
             </footer>
     <!--- End Footer -->
-        </body>
-    </html>
+    <!--- Top Scroll Start -->
+	<a href="#0" class="cd-top">Top</a>
+    <script src="js/top.js"></script> <!-- Gem jQuery -->
+    <script src="js/modernizr.js"></script>
+<!--- Top Scroll End -->
 </body>
 </html>
