@@ -1,144 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>CBANA Khawmpi in lungawi so par ten kan lo hmuak</title>
 		<link href="css/jquery.bxslider.css" rel="stylesheet" />
 		<link href="style.css" rel="stylesheet">
 		<link href="css/font-awesome.min.css" rel="stylesheet"/>
-		<link href="shourtcut icon" href="favicon.ico">
+		<link href="shortcut icon" href="favicon.ico">
 		<meta name="description" content="">
-</head>
-<style>
-    #map {
-        height: 300px;
-        width: 100%;
-    }
-</style>
-<body>
-    <a name="home">
-<!--- Start Navigation -->
-		<script src="js/jquery-1.11.2.min.js"></script>
-		<script src="js/main.js"></script> <!--- For Navigation -->
-		<div class="nav-outer">
-		<div class="nav-wrap">
-			<nav class="navigation">
-                
-				<div class='nav' nav-menu-style="yoga">
-					<ul class="nav-menu">
-						<li><a href="#home">Home</a></li>
-                        <li><a href="#map">Map</a></li>
-						<li><a href="#events">Events</a></li>
-						<li><a href="#pastor">Pastor thucah</a></li> 
-                        <li><a href="#khawmpi">Zuamawknak</a></li>
-					</ul>	
-				</div>
-			</nav>
-		</div>
-	</div>
-	<div class="nav-clear"></div>
-<!--- End Navigation -->
-	    <!--- Start Slider -->
-<script src="js/jquery.bxslider.min.js"></script><!--For Image Slider-->
-<div class="slide-wrap">
-    <section class="slider">
-        <ul class="slider1">
-            <a href="https://imgur.com/diPNdWt"><img src="https://i.imgur.com/diPNdWt.png" title="" /></a>
-        </ul>
-    </section>
+    </head>
+    <style>
+        #map {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+    <br>
+
+ <!--- Start Navigation -->
+ <script src="js/jquery-1.11.2.min.js"></script>
+ <script src="js/main.js"></script> <!--- For Navigation -->
+ <div class="nav-outer">
+ <div class="nav-wrap">
+     <nav class="navigation">
+         
+         <div class='nav' nav-menu-style="yoga">
+             <ul class="nav-menu">
+                 <li><a href="#home">Home</a></li>
+                 <li><a href="#map">Map</a></li>
+                 <li><a href="#events">Events</a></li>
+                 <li><a href="#pastor">Pastor thucah</a></li> 
+                 <li><a href="#khawmpi">Zuamawknak</a></li>
+             </ul>	
+         </div>
+     </nav>
+ </div>
 </div>
-<script type="text/javascript">
-    $('.slider1').bxSlider({
-        mode: 'fade',
-        captions: false,
-        auto:true,
-        pager:false,
-        
-    });
-    $('.slider2').bxSlider({
-        pager:false,
-        captions: true,
-        maxSlides: 3,
-        minSlides: 1,
-        slideWidth: 230,
-        slideMargin: 10
-    });
-    $('.slider3').bxSlider({
-        mode: 'fade',
-        captions: false,
-        auto:true,
-        pager:false,
-        controls:false,
-    });
-</script>
-<!--- End Slider -->
-<!--- Sart Banner Wrapper -->
-<a name="about">
-	<div id="banner-wrapper">
-		<h1>Welcome To CBANA 2018</h1>
-			<div class="welcome-column">
-				<div class="welcome-icon">
-					<i class="fa fa-keyboard-o"></i>
-				</div>
-				<div class="welcome-text">
-					<h3>Lungawi so par tene kan lo hmuak</h3>
-					<p>A vei 6 nak CBANA khawmpi in lungawi so par ten kan lo hmuak a si. Pathian lam hruainak in a vei 6 nak khawmpi tla kna hmang thei sal. Pathian a tha.
-					Atlanta Chin Baptist Church ih rak thawk mi CBANA cu tukum ah kum 10 a kim thei sal.
-					</p>
-				</div>
-			</div>
-			<div class="welcome-column">
-				<div class="welcome-icon">
-					<i class="fa fa-laptop"></i>
-				</div>
-				<div class="welcome-text">
-					<h3>Lungawithu simnak</h3>
-					<p>Rev. Sa Tin Lal hnen in lungawi thu sim nawk <br>
-					CBANA khawmpi ah ra khawmtu nan zaten par ah Pathian in thlawsuah tampi lo pe hram seh. Rin lo pi kum 10 a rung kim mei.
-					</p> <br>
-				</div>
-			</div>
-	</div>
-<!--- End Banner Wrapper -->
-<a name="map">
-
-<div id="map"></div>
-
-<script>
-    function initMap() {
-        var location = {lat: 33.991358, lng: -84.093860};
-        var map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 15,
-            center: location
-        });
-        var marker = new google.maps.Marker({
-            position: location, 
-            map: map
-        });
-    }
-    
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUqfItJg6AiRdznJAAbI0if5dGYgGORxU&callback=initMap"></script>
-    <type="text/javascript"></script>
-<!--- Start Image, Title & Text -->
-<section class="one-third">
-    <img src="img/500x371.png" title=""/>
-    <h3>Heading title text</h3>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-</section>
-<section class="one-third">
-    <img src="img/500x371.png" title=""/>
-    <h3>heading title text</h3>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-</section>
-<section class="one-third">
-    <img src="img/500x371.png" title=""/>
-    <h3>Heading title text</h3>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-</section>
+<div class="nav-clear"></div>
+<!--- End Navigation -->
+<a name="home">
+<header id="showcase">
+    <h1>CBANA website in kan lo hmuak</h1>
+    <p>A vei 6 nak CBANA Khawmpi Website ah na ra leng ih kan lungawi.</p>
+  </header>
 <!--- End Image, Title & Text -->
+    <div class="clearfix"></div>
+    <!--- Start Parallax Section -->
+    <section class="parallax-1">
+        <div class="parallax-inner">       
+<!--- Start Heading & Text Section -->
+<section class="one-third">
+        <td><i class="fa fa-youtube-play"></i></td>
+        <h3>President Thucah</h3>
+        <p>Zuamawknak phun phun a um ding  ih a tlangpi in Bible zohlo siar zuamawknak, Pakzaihla zuamawknak, Choir zuamawknak, le Bubu lam 
+        zuamawknak pawl an si ding.</p>
+    </section>
+    <section class="one-third">
+        <td><i class="fa fa-html5"></i></td>
+        <h3>General Secretary thucah</h3>
+        <p>ACBC Sunday School saya/sayamah pawl ih hohanak in khawmpi sung hmuah hmuah nauhak kilkhawinak a um ding. Nu le Pa pawl Pathian thu 
+        tha ten an zir theinak ding tin tumtahnak thawn tuah mi a si.</p>       </section>
+    <section class="one-third">
+        <td><i class="fa fa-desktop"></i></td>
+        <h3>Mission Director thucah</h3>
+        <p>Khamwpi sung ih theih tul mi te te pawl kan run tar lang ding. Motor parknak pawl hi kan rel cia mi tuanvo neitu pawl in 
+        an lo sim cia zo vek in cangan nak ah park ding a si.</p>       </section>
+<!--- End Heading & Text Section -->
+</div>
+</section>
+<!--- End Parallax Section -->
 
 <a name="events">
                 <div id="banner-wrapper">
@@ -165,37 +97,33 @@
                         </div>
                 </div>
   <!--- End Four Column Icon Section -->
-	<div class="clearfix"></div>
-    <!--- Start Parallax Section -->
-    <section class="parallax-1">
-        <div class="parallax-inner">
-<!--- Start Heading & Text Section -->
-<section class="one-third">
-        <td><i class="fa fa-youtube-play"></i></td>
-        <h3>cBANA president hnen ih thucah.</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-            the industry's standard dummy text ever since the 1500s.</p>
-    </section>
-    <section class="one-third">
-        <td><i class="fa fa-html5"></i></td>
-        <h3>CBANA General Secretary hnen ih thucah</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-            the industry's standard dummy text ever since the 1500s.</p>		</section>
-    <section class="one-third">
-        <td><i class="fa fa-desktop"></i></td>
-        <h3>Mission Diretor hnen ih thucah</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-            the industry's standard dummy text ever since the 1500s.</p>		</section>
-<!--- End Heading & Text Section -->
-</div>
-</section>
-<!--- End Parallax Section -->
 <div id="banner-wrapper">
         <div class="clearfix"></div>
+</div>
+</section>
+<a name="map">
+    <div id="map"></div>
+
+<script>
+    function initMap() {
+        var location = {lat: 33.991358, lng: -84.093860};
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location, 
+            map: map
+        });
+    }
+    
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUqfItJg6AiRdznJAAbI0if5dGYgGORxU&callback=initMap"></script>
+    <type="text/javascript"></script>
 <!--- Start Heading & Text Sections -->
 <a name="pastor">
         <!--- Start Image Section -->
-			<section class="left-col">
+            <section class="left-col">
                     <img src="https://imgur.com/gRnF2Kk"><img src="https://i.imgur.com/gRnF2Kk.jpg" 
                         title="source: imgur.com" /></a>"    
                 </section>
@@ -231,13 +159,13 @@
     <td><i class="fa fa-html5"></i></td>
     <h3>Khawmpi sung ih tuah lo ding mi pawl.</h3>
     <p>Khawmpi sung ah zu in lo ding, khaini hmom lo ding, kuak fawp lo ding ih sadah tivek tla hmang lo ding
-            in zangfah kan lo </p>		</section>
+            in zangfah kan lo </p>      </section>
 <section class="one-third">
     <td><i class="fa fa-desktop"></i></td>
     <h3>Theih tul mi te te.</h3>
     <p>Motor parking pawl hi kan lo sim mi pawl ah nan park lo len ticket nan ngah ding. Cu ruangah seurity pawl le parking coordinator pawl ih
         thu ngai aw. Nauhak pawl kha nauhak kilnak ah va ret aw.
-    </p>		</section>
+    </p>        </section>
 <!--- End Heading & Text Section -->
 </div>
 </section>
@@ -301,16 +229,13 @@
             
         </section>
 
-    <!--- End Banner Wrapper -->				
+    <!--- End Banner Wrapper -->   
+    <video autoplay muted loop id="myVideo">
+            <source src="rain.mp4" type="video/mp4">   
     <!--- Start Footer -->
             <footer>
                 <p>&copy; CBANA Khawmpi, 2018. All rights reserved</p>
             </footer>
     <!--- End Footer -->
-    <!--- Top Scroll Start -->
-	<a href="#0" class="cd-top">Top</a>
-    <script src="js/top.js"></script> <!-- Gem jQuery -->
-    <script src="js/modernizr.js"></script>
-<!--- Top Scroll End -->
 </body>
 </html>
