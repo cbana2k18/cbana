@@ -473,7 +473,7 @@ body .nav .nav-menu li a {
 /*--- End Parallax Style --*/
 
 /*--------------------MEDIA!!!---------------*/
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 640px) {
     .cd-top {
           height: 60px;
           width: 60px;
@@ -483,7 +483,7 @@ body .nav .nav-menu li a {
 }
 
 *<-- End Updated style to span social buttons 100% -->*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
 	#banner-wrapper {
 		position: relative; /*--Position & overflow styles added to remove space to right of screen--*/
 		-ms-overflow-x: hidden;
@@ -658,8 +658,7 @@ body{
     box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
   }
   
-  .wrapper > *{
-    padding: 1em;
+  .wrapper >     padding: 1em;
   }
   
   .company-info{
@@ -685,7 +684,7 @@ body{
   }
 
   /* LARGE SCREENS */
-@media(min-width:700px){
+@media(min-width:640px){
     .wrapper{
       display: grid;
       grid-template-columns: 1fr 2fr;
